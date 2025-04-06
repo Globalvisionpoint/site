@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pagini"
+    label: "Pagini site"
+    files:
+      - file: "index.html"
+        label: "Pagina principală"
+        name: "index"
+        fields:
+          - { label: "Conținut", name: "body", widget: "markdown" }

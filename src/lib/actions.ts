@@ -1,0 +1,110 @@
+
+'use server';
+
+import { z } from 'zod';
+import { Resend } from 'resend';
+
+const resendApiKey = process.env.RESEND_API_KEY;
+if (!resendApiKey) {
+  console.warn('Missing RESEND_API_KEY environment variable. Email sending is disabled.');
+}
+
+const contactSchema = z.object({
+  name: z.string().min(2, { message: "Numele trebuie să aibă cel puțin 2 caractere." }),
+  email: z.string().email({ message: "Te rugăm să introduci o adresă de email validă." }),
+  phone: z.string().optional(),
+  message: z.string().min(10, { message: "Mesajul trebuie să aibă cel puțin 10 caractere." }),
+});
+
+import type { FormState } from './definitions';
+
+export async function submitContactForm(prevState: FormState, formData: FormData): Promise<FormState> {
+  console.log('Environment check:', {
+    hasResendKey: !!process.env.RESEND_API_KEY,
+    fromEmail: process.env.RESEND_FROM,
+    toEmail: process.env.CONTACT_TO
+  });
+
+  const validatedFields = contactSchema.safeParse({
+    name: formData.get('name'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    message: formData.get('message'),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: 'Formularul conține erori. Te rugăm să le corectezi.',
+      isSuccess: false,
+    };
+  }
+
+  // Trimitere email cu Resend
+  if (!resendApiKey) {
+    return {
+      message: 'Configurarea email nu este disponibilă momentan. Te rugăm să ne contactezi direct pe email.',
+      isSuccess: false,
+    };
+  }
+  try {
+    const fromEmail = process.env.RESEND_FROM;
+    const toEmail = process.env.CONTACT_TO;
+    
+    // Log pentru debug
+    console.log('Configurare email:', {
+      fromEmail,
+      toEmail,
+      apiKeyExists: !!resendApiKey,
+    });
+    
+    if (!fromEmail || !toEmail) {
+      console.error('Missing RESEND_FROM or CONTACT_TO environment variables');
+      return {
+        message: 'Configurarea email nu este completă. Te rugăm să ne contactezi direct pe email.',
+        isSuccess: false,
+      };
+    }
+
+    const resend = new Resend(resendApiKey);
+    console.log('Încercare trimitere email cu datele:', {
+      from: fromEmail,
+      to: toEmail,
+      subject: `Mesaj nou de la ${validatedFields.data.name}`,
+    });
+
+    console.log('Attempting to send email with config:', {
+      from: fromEmail,
+      to: toEmail,
+      subject: `Mesaj nou de la ${validatedFields.data.name}`,
+    });
+
+    const resendResponse = await resend.emails.send({
+      from: fromEmail,
+      to: toEmail,
+      subject: `Mesaj nou de la ${validatedFields.data.name}`,
+      replyTo: validatedFields.data.email,
+      text: `Nume: ${validatedFields.data.name}\nEmail: ${validatedFields.data.email}\nTelefon: ${validatedFields.data.phone || '-'}\n\nMesaj:\n${validatedFields.data.message}`,
+    });
+    console.log('Resend response:', resendResponse);
+    if (!resendResponse || resendResponse.error) {
+      return {
+        message: 'A apărut o eroare la trimiterea mesajului: ' + (resendResponse?.error?.message || 'Eroare necunoscută'),
+        isSuccess: false,
+      };
+    }
+  } catch (error) {
+    console.error('Resend error:', error);
+    // Adăugăm mai multe detalii despre eroare în răspuns
+    const errorMessage = error instanceof Error ? error.message : 'Eroare necunoscută';
+    return {
+      message: `A apărut o eroare la trimiterea mesajului: ${errorMessage}. Te rugăm să încerci din nou sau să ne contactezi direct pe email.`,
+      isSuccess: false,
+    };
+  }
+
+  return {
+    message: 'Mesajul tău a fost trimis! Îți mulțumim și te vom contacta în cel mai scurt timp.',
+    isSuccess: true,
+  };
+}

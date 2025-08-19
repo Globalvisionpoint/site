@@ -39,10 +39,22 @@ const nextConfig: NextConfig = {
     const connectSrc = [
       "'self'",
       'https://www.google-analytics.com',
+      'https://region1.google-analytics.com',
       'https://www.googletagmanager.com',
       'https://www.google.com',
-      'https://region1.google-analytics.com',
+      'https://google.com',
+      'https://www.googleadservices.com',
+      'https://googleadservices.com',
       'https://www.merchant-center-analytics.goog',
+      'https://www.google.com/pagead/',
+      'https://google.com/pagead/',
+      'https://www.googleadservices.com/pagead/',
+      'https://www.facebook.com',
+      'https://connect.facebook.net',
+      'https://www.instagram.com',
+      'https://analytics.tiktok.com',
+      'https://business.tiktok.com',
+      'https://ads.tiktok.com',
       ...(isDev ? ['ws:', 'http://localhost:*', 'http://0.0.0.0:*'] : []),
     ].join(' ');
     const csp = [

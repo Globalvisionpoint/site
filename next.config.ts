@@ -40,6 +40,7 @@ const nextConfig: NextConfig = {
       "'self'",
       'https://www.google-analytics.com',
       'https://www.googletagmanager.com',
+      'https://www.google.com',
       ...(isDev ? ['ws:', 'http://localhost:*', 'http://0.0.0.0:*'] : []),
     ].join(' ');
     const csp = [

@@ -41,6 +41,8 @@ const nextConfig: NextConfig = {
       'https://www.google-analytics.com',
       'https://www.googletagmanager.com',
       'https://www.google.com',
+      'https://region1.google-analytics.com',
+      'https://www.merchant-center-analytics.goog',
       ...(isDev ? ['ws:', 'http://localhost:*', 'http://0.0.0.0:*'] : []),
     ].join(' ');
     const csp = [

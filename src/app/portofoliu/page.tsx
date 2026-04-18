@@ -1,231 +1,141 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Metadata } from 'next';
-import { Star } from "lucide-react";
-import Head from 'next/head';
+import Link from "next/link";
+import { LayoutTemplate, ShoppingCart, ScanSearch, Megaphone, PencilRuler, Layers3 } from "lucide-react";
 
-const projects = [
+const projectDirections = [
   {
-    title: "Site de Prezentare Dealer Auto",
-    description: "O platformă modernă pentru un dealer auto, cu listări detaliate, căutare avansată și formulare de contact pentru test drive.",
-    imageUrl: "/autobias.webp",
-    imageHint: "car dealership",
-    liveLink: "https://www.autobias.ro/",
-    tags: ["Automobile", "Next.js", "Vânzări"],
+    title: "Site de prezentare premium",
+    description: "Pentru firme, servicii, clinici, saloane, showroom-uri sau branduri care vor o imagine clară și profesionistă.",
+    tags: ["prezentare", "lead-uri", "încredere"],
+    icon: LayoutTemplate,
   },
   {
-    title: "Site de Prezentare pentru Servicii Detailing Auto",
-    description: "Website modern pentru prezentarea serviciilor profesionale de detailing auto, cu portofoliu, descriere servicii, galerie foto și formular de contact rapid.",
-    imageUrl: "/detailing-auto.webp",
-    imageHint: "detailing auto",
-    liveLink: "https://cdddetailing.ro/",
-    tags: ["Automobile", "Next.js", "Platformă"],
+    title: "Magazin online orientat pe conversie",
+    description: "Structură bună, produse organizate, categorii clare și pagini gândite pentru un parcurs mai simplu spre comandă.",
+    tags: ["e-commerce", "produse", "vânzări"],
+    icon: ShoppingCart,
   },
   {
-    title: "Site pentru Pensiune Turistică",
-    description: "Soluție completă pentru rezervări online, gestionare camere, evenimente și facilități pentru o pensiune turistică modernă, cu integrare plăți și panou administrare.",
-    imageUrl: "/pensiune-rezervare.webp",
-    imageHint: "pensiune rezervare",
-    liveLink: "https://www.valeasipotului.ro/",
-    tags: ["Web App", "Integrare API", "Automatizare"],
+    title: "Tracking și pixeli corect instalați",
+    description: "Setăm Google Analytics, Meta Pixel și TikTok Pixel pentru ca promovarea să fie măsurată corect, nu doar presupusă.",
+    tags: ["GA4", "Meta Pixel", "TikTok Pixel"],
+    icon: ScanSearch,
   },
   {
-    title: "Site pentru Servicii de Management Hotelier",
-    description: "Pagină de prezentare pentru servicii complete de administrare și management al proprietăților în regim hotelier: rezervări online, raportare, asistență 24/7 și listare pe multiple platforme.",
-    imageUrl: "/cityhome.webp",
-    imageHint: "management hotelier",
-    liveLink: "https://cityhome.ro/",
-    tags: ["Site", "Management Hotelier", "Automatizare"],
+    title: "Landing pages pentru reclame",
+    description: "Pagini de campanie clare, rapide și bine structurate pentru Google Ads, Meta Ads sau TikTok Ads.",
+    tags: ["ads", "landing page", "rezultate"],
+    icon: Megaphone,
   },
   {
-    title: "Site pentru Agenție de Turism Online",
-    description: "Platformă modernă pentru rezervări online, city break-uri, vacanțe charter, bilete de avion și oferte de cazare, cu consultanți dedicați și cele mai bune prețuri fără taxe ascunse.",
-    imageUrl: "/veltravel.webp",
-    imageHint: "agenție de turism",
-    liveLink: "https://www.veltravel.ro/",
-    tags: ["Turism", "Rezervări Online", "City Break", "Vacanțe"],
+    title: "Descrieri, titluri și conținut de produs",
+    description: "Punem ordine în produse și scriem texte mai convingătoare, mai clare și mai ușor de urmărit de către client.",
+    tags: ["copy", "catalog", "claritate"],
+    icon: PencilRuler,
   },
   {
-    title: "Site pentru Restaurant",
-    description: "Un site apetisant pentru un restaurant, cu meniu online, sistem de rezervări și galerie foto a preparatelor.",
-    imageUrl: "/restaurant.webp",
-    imageHint: "restaurant website",
-    liveLink: "https://elephantebucharest.com/",
-    tags: ["Restaurant", "Rezervări Online", "Local SEO"],
+    title: "Soluții personalizate după industrie",
+    description: "Adaptăm designul, structura și mesajul în funcție de nișa ta, fără șabloane reci și fără exemple forțate.",
+    tags: ["personalizat", "branding", "strategie"],
+    icon: Layers3,
   },
 ];
 
-const testimonials = [
-  {
-    name: "Andrei Popescu",
-    company: "CEO la Consultify",
-    avatarUrl: "/andrei-popescu.webp",
-    avatarFallback: "AP",
-    review: "Colaborarea cu echipa digital-online.ro a fost excepțională. Ne-au livrat un site ultra-rapid, exact cum am cerut, și ne-au oferit suport tehnic gratuit pentru lansare. Recomand cu încredere!",
-  },
-  {
-    name: "Elena Ionescu",
-    company: "Fondator Artizanal",
-    avatarUrl: "/elena-ionescu.webp",
-    avatarFallback: "EI",
-    review: "Sunt extrem de mulțumită de noul meu magazin online. Designul este curat, modern și, cel mai important, vinde! Faptul că nu plătesc un abonament lunar este un bonus imens pentru afacerea mea.",
-  },
-  {
-      name: "Mihai Georgescu",
-      company: "Manager Pensiunea Transilvania",
-      avatarUrl: "/mihai-georgescu.webp",
-      avatarFallback: "MG",
-      review: "Profesionalism și eficiență. Ne-au înțeles perfect nevoile și au creat o aplicație de rezervări care ne-a simplificat enorm munca. Viteza de execuție a fost impresionantă.",
-  },
-  {
-    name: "Laura Dinu",
-    company: "Organizator MusicFest",
-    avatarUrl: "/laura-dinu.webp",
-    avatarFallback: "LD",
-    review: "Site-ul creat de ei a fost un succes total. A arătat incredibil și a funcționat perfect, chiar și cu trafic intens. Rata de conversie a biletelor a fost peste așteptări.",
-  },
-  {
-      name: "Cristian Olaru",
-      company: "Blogger la 'Valiza Plină'",
-      avatarUrl: "/cristian-olaru.webp",
-      avatarFallback: "CO",
-      review: "Au transformat viziunea mea într-un blog superb și foarte rapid. Acum fotografiile mele se încarcă instant, iar cititorii laudă constant experiența de navigare. Servicii de top!",
-  },
-  {
-      name: "Familia Rusu",
-      company: "Proprietari 'La Taifas'",
-      avatarUrl: "/familia-rusu.webp",
-      avatarFallback: "FR",
-      review: "Noul nostru site a atras mult mai mulți clienți. Meniul online este ușor de folosit, iar sistemul de rezervări funcționează fără probleme. O investiție care s-a meritat din prima lună.",
-  }
+const strengths = [
+  "Mesaj clar și imagine mai profesionistă",
+  "Structură gândită pentru încredere și contact",
+  "Performanță bună și experiență curată pe mobil",
+  "Ofertă personalizată în funcție de nevoile reale",
 ];
 
 export const metadata: Metadata = {
-  title: 'Portofoliu Web Design',
-  description: 'Vezi site-uri realizate pentru clienți din diverse domenii. Web design modern, rapid și optimizat SEO.',
+  title: 'Tipuri de proiecte și direcții creative',
+  description: 'Descoperă ce tipuri de site-uri, magazine online și soluții digitale putem construi pentru afacerea ta.',
   alternates: {
     canonical: "/portofoliu",
   },
 };
 
 export default function PortofoliuPage() {
-  const reviewStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": testimonials.map((t, i) => ({
-      "@type": "Review",
-      "position": i + 1,
-      "author": {
-        "@type": "Person",
-        "name": t.name
-      },
-      "reviewBody": t.review,
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": 5,
-        "bestRating": 5,
-        "worstRating": 1
-      },
-      "itemReviewed": {
-        "@type": "Organization",
-        "name": "digital-online.ro"
-      }
-    }))
-  };
   return (
-    <>
-      <Head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewStructuredData) }} />
-      </Head>
-      <div className="relative">
-        <div className="py-20 sm:py-24">
-          <div className="container mx-auto px-4">
-            
-            {/* Project Section */}
-            <div className="text-center mb-16 pt-8">
-              <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
-                Proiectele Noastre, <span className="text-primary">Inspirația Ta.</span>
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-                Iată câteva dintre soluțiile web pe care le-am construit pentru clienții noștri.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-              {projects.map((project, index) => (
-                <Card key={index} className="flex flex-col overflow-hidden border-border/50 hover:border-primary transition-all duration-300 transform hover:-translate-y-1">
-                  <CardHeader className="p-0">
-                    <Image
-                      src={project.imageUrl}
-                      alt={`Imagine pentru proiectul ${project.title}`}
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-cover"
-                      data-ai-hint={project.imageHint}
-                    />
-                  </CardHeader>
-                  <CardContent className="flex-grow p-6">
-                    <CardTitle className="font-headline text-xl mb-2">{project.title}</CardTitle>
-                    <p className="text-muted-foreground mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                        {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
-                    </div>
-                  </CardContent>
-                  <CardFooter className="p-6 pt-0">
-                    <Button asChild className="w-full" variant="outline">
-                      <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">Vezi Proiectul Live</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-
-            <div className="text-center my-8">
-              <a href="/contact" className="inline-block text-lg font-bold text-primary hover:underline">Vrei și tu un site performant? Contactează-ne aici.</a>
-            </div>
-
-            {/* Testimonials Section */}
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold font-headline text-white">
-                Ce Spun <span className="text-primary">Clienții Noștri.</span>
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-                Satisfacția clienților este cea mai bună carte de vizită pentru noi.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="bg-secondary/50 border-border/50 flex flex-col">
-                  <CardContent className="p-6 flex-grow">
-                    <div className="flex items-center mb-4">
-                        <Avatar className="h-12 w-12 mr-4">
-                            <AvatarImage src={testimonial.avatarUrl} alt={`Avatar ${testimonial.name}`} />
-                            <AvatarFallback>{testimonial.avatarFallback}</AvatarFallback>
-                        </Avatar>
-                        <div>
-                            <p className="font-bold text-white">{testimonial.name}</p>
-                            <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                        </div>
-                    </div>
-                    <div className="flex text-yellow-400 mb-4">
-                        {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
-                    </div>
-                    <blockquote className="text-muted-foreground italic border-l-2 border-primary pl-4">
-                      &ldquo;{testimonial.review}&rdquo;
-                    </blockquote>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
+    <div className="relative py-20 sm:py-24">
+      <div className="container mx-auto px-4">
+        <div className="mb-16 pt-8 text-center">
+          <div className="mb-4 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300">
+            direcții de proiect pentru brandul tău
           </div>
+          <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
+            Ce putem construi pentru <span className="text-primary">afacerea ta</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+            În loc de exemple forțate, am ales să prezentăm clar tipurile de proiecte și direcțiile pe care le putem dezvolta pentru tine, în funcție de obiective, industrie și nivelul de creștere dorit.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {projectDirections.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Card key={item.title} className="glass-card rounded-2xl border-white/10 flex flex-col">
+                <CardHeader>
+                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <CardTitle className="text-xl text-white">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="mb-4 text-slate-300">{item.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {item.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="bg-white/10 text-slate-200 hover:bg-white/10">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-[1fr_.9fr]">
+          <Card className="glass-card rounded-2xl border-white/10">
+            <CardHeader>
+              <CardTitle className="text-3xl text-white">Cum vrem să arate fiecare proiect</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {strengths.map((item) => (
+                <div key={item} className="flex items-start gap-3 text-slate-300">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          <Card className="glass-card rounded-2xl border-white/10">
+            <CardHeader>
+              <CardTitle className="text-3xl text-white">Vrei o variantă potrivită pentru tine?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-slate-300">
+                Spune-ne ce tip de business ai, dacă vrei site de prezentare sau magazin online, dacă ai nevoie de produse, conținut, pixeli sau campanii Ads, iar noi îți propunem direcția potrivită.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Button asChild className="rounded-full bg-cyan-400 text-slate-950 hover:bg-cyan-300">
+                  <Link href="/contact">Solicită ofertă personalizată</Link>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full border-white/15 bg-white/5 text-white hover:bg-white/10 hover:text-white">
+                  <Link href="/preturi-site">Vezi serviciile</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
-    </>
+    </div>
   );
 }

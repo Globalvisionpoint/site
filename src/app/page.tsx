@@ -110,7 +110,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full border-white/15 bg-white/5 text-white hover:bg-white/10 hover:text-white">
-                <Link href="/portofoliu">Vezi portofoliu</Link>
+                <Link href="/portofoliu">Vezi ce putem construi</Link>
               </Button>
             </div>
           </div>

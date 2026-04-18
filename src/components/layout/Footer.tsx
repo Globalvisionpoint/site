@@ -34,7 +34,7 @@ export function Footer() {
 
         <div className="mt-6 flex flex-col gap-2 border-t border-white/10 pt-4 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
           <p>&copy; {year} Digital-Online.ro. Toate drepturile rezervate.</p>
-          <p>Fără prețuri afișate public. Oferte personalizate în funcție de volum și obiective.</p>
+          <p>Consultanță inițială și ofertă personalizată în funcție de volum și obiective.</p>
         </div>
       </div>
     </footer>

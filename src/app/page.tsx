@@ -92,7 +92,7 @@ export default function Home() {
               Construim site-uri și magazine online care <span className="text-cyan-300">arată premium</span> și sunt făcute să aducă rezultate.
             </h1>
             <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-300 md:text-xl">
-              Ne ocupăm de design, structură, produse, descrieri, pixeli, tracking și promovare pe Google, Meta sau TikTok. Tu vii cu direcția afacerii, noi transformăm totul într-o prezență online serioasă și convingătoare.
+              Ne ocupăm de design, structură, produse, descrieri, pixeli, tracking și promovare Google ads, Meta ads sau TikTok ads. Tu vii cu direcția afacerii, noi transformăm totul într-o prezență online serioasă și convingătoare.
             </p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm">
@@ -178,10 +178,10 @@ export default function Home() {
             <div className="glass-card rounded-3xl p-6 sm:p-8">
               <div className="mb-4 flex items-center gap-3">
                 <Workflow className="h-6 w-6 text-fuchsia-300" />
-                <h3 className="text-2xl font-bold text-white">Fără prețuri afișate public</h3>
+                <h3 className="text-2xl font-bold text-white">Ofertă construită pe nevoile proiectului</h3>
               </div>
               <p className="text-slate-300">
-                Pentru un magazin online sau un proiect de promovare, costul depinde de numărul de produse, complexitate, integrare și volumul de lucru. De aceea pregătim oferte personalizate după o discuție scurtă.
+                Pentru un magazin online sau un proiect de promovare, costul se stabilește în funcție de numărul de produse, complexitate, integrare și volumul real de lucru. Astfel primești o propunere corectă și potrivită obiectivelor tale.
               </p>
               <Button asChild className="mt-6 rounded-full bg-fuchsia-500 text-white hover:bg-fuchsia-400">
                 <Link href="/preturi-site">Vezi cum lucrăm</Link>

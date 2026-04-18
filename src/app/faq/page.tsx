@@ -9,50 +9,55 @@ import Head from 'next/head';
 
 const faqItems = [
   {
-    question: 'Ce înseamnă "fără costuri lunare"?',
-    answer: "Înseamnă că plătești o singură dată pentru crearea site-ului. Nu există nicio taxă de mentenanță sau abonament de la noi. Singurele costuri externe, pe care le cumperi și deții tu, sunt domeniul (costuri variabile în funcție de furnizor).",
+    question: 'Ce servicii oferiți concret?',
+    answer:
+      'Realizăm site-uri de prezentare, magazine online, pagini de ofertă, descrieri și titluri pentru produse, inserare produse, tracking, instalare pixeli și campanii Google, Meta sau TikTok Ads.',
   },
   {
-    question: "Pot să modific site-ul mai târziu?",
-    answer: "Da! Primești codul sursă complet. Oricine cu cunoștințe de HTML, CSS, JavaScript, Next.js și React îl poate modifica. Alternativ, putem face noi modificări viitoare, contra-cost, la un tarif avantajos.",
+    question: 'Afișați prețurile pe site?',
+    answer:
+      'Nu. Fiecare proiect are cerințe diferite, iar costul depinde de numărul de pagini, produse, integrări și volumul de lucru. De aceea oferim estimări personalizate după o discuție scurtă.',
   },
   {
-    question: "Mă ajutați cu publicarea site-ului?",
-    answer: "Absolut. Conectarea site-ului la domeniul tău și încărcarea pe serviciul de găzduire sunt incluse gratuit în prețul oricărui pachet de creare site. Ne ocupăm de tot procesul tehnic.",
+    question: 'Puteți păstra paginile deja indexate în Google?',
+    answer:
+      'Da. Când refacem designul, păstrăm structura importantă și rutele indexate, astfel încât să nu afectăm inutil prezența deja câștigată în Google.',
   },
   {
-    question: "De ce folosiți Next.js și nu WordPress?",
-    answer: "Pentru viteză, securitate ��i zero mentenanță. Site-urile noastre statice sunt fundamental mai rapide și mai sigure decât platformele complexe precum WordPress. Asta elimină nevoia de update-uri constante, riscuri de securitate și costuri de mentenanță.",
+    question: 'Vă ocupați și de produsele din magazin?',
+    answer:
+      'Da. Putem insera produse, organiza categorii, scrie titluri și descrieri, corecta informațiile și face prezentarea mai clară pentru client.',
   },
   {
-    question: "Ce trebuie să vă ofer pentru a începe?",
-    answer: "Avem nevoie de textele pentru fiecare secțiune/pagină, logo-ul tău (dacă ai unul), imagini și orice alte preferințe de design (culori, fonturi, site-uri care îți plac). Dacă nu ai text sau imagini, te putem ajuta și cu asta.",
+    question: 'Instalați Google Pixel, Meta Pixel și TikTok Pixel?',
+    answer:
+      'Da. Configurăm tracking-ul de bază, evenimentele importante și verificăm dacă măsurarea funcționează corect pentru campanii și analiză.',
   },
   {
-    question: "Cât durează crearea unui site?",
-    answer: "Un Pachet Standard este de obicei gata în 3-5 zile lucrătoare, în timp ce un Pachet Custom sau Pachet Avansat poate dura între 5-10 zile lucrătoare, în funcție de complexitate. Pe toată această perioadă, clientul este în contact permanent cu echipa noastră pentru sugestii și modificări.",
+    question: 'Gestionați și campanii ads?',
+    answer:
+      'Da. Putem crea, gestiona și optimiza campanii pe Google, Meta și TikTok, în funcție de obiectivele afacerii și bugetul disponibil.',
   },
   {
-    question: 'Site-ul va fi optimizat pentru mobil și SEO?',
-    answer: 'Da, toate site-urile noastre sunt responsive (optimizate pentru mobil) și includ optimizare SEO tehnică pentru indexare rapidă și poziționare bună în Google.',
+    question: 'Oferiți consultanță pentru cine vrea să deschidă un magazin online?',
+    answer:
+      'Da. Oferim ghidare practică privind pașii de lansare, structură, produse, imagine, promovare și organizare. Pentru situații juridice sau fiscale specifice, recomandăm și apelarea la un specialist dedicat.',
   },
   {
-    question: 'Oferiți și găzduire web sau doar site-ul?',
-    answer: 'Oferim găzduire și stocare gratuită pentru site-ul tău, dar poți alege și orice altă găzduire preferi.',
+    question: 'Site-ul rămâne rapid și optimizat pentru mobil?',
+    answer:
+      'Da. Lucrăm cu accent pe performanță, experiență bună pe telefon și cod curat, astfel încât site-ul să rămână rapid și plăcut de folosit.',
   },
   {
-    question: 'Ce se întâmplă dacă vreau modificări după livrare?',
-    answer: 'Poți solicita modificări suplimentare oricând, contra cost, la un tarif avantajos. Pentru pachetele avansate, unele modificări minore pot fi incluse gratuit.',
-  },
-  {
-    question: 'Site-ul va fi sigur și protejat împotriva atacurilor?',
-    answer: 'Da, implementăm toate politicile moderne de securitate web pentru protecția site-ului și a datelor tale.',
+    question: 'Puteți ajuta și cu imagini, logo sau materiale promo?',
+    answer:
+      'Da. Putem ajusta vizualuri de produs, elemente grafice, logo, bannere și materiale care susțin imaginea magazinului sau a brandului.',
   },
 ];
 
 export const metadata: Metadata = {
-  title: 'Întrebări Frecvente',
-  description: 'Răspunsuri clare despre creare site, web design și promovare online. Suport transparent și rapid.',
+  title: 'Întrebări frecvente',
+  description: 'Răspunsuri clare despre site-uri, magazine online, pixeli, campanii ads și consultanță pentru e-commerce.',
   alternates: {
     canonical: "/faq",
   },
@@ -62,15 +67,16 @@ export default function FaqPage() {
   const faqStructuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqItems.map(item => ({
+    "mainEntity": faqItems.map((item) => ({
       "@type": "Question",
       "name": item.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": item.answer
-      }
-    }))
+        "text": item.answer,
+      },
+    })),
   };
+
   return (
     <>
       <Head>
@@ -80,21 +86,21 @@ export default function FaqPage() {
         <div className="container mx-auto px-4">
           <div className="relative text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
-              Ai Întrebări? <span className="text-primary">Avem Răspunsuri.</span>
+              Întrebări frecvente, <span className="text-primary">răspunsuri directe</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-              Am adunat aici cele mai frecvente întrebări pentru a-ți oferi claritate.
+              Am adunat cele mai importante lucruri pe care clienții vor să le știe înainte să înceapă un proiect.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto glass-card rounded-2xl border-white/10 px-4 sm:px-6">
             <Accordion type="single" collapsible className="w-full">
               {faqItems.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left text-lg hover:no-underline">
+                  <AccordionTrigger className="text-left text-lg hover:no-underline text-white">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground">
+                  <AccordionContent className="text-base text-slate-300">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

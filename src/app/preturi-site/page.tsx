@@ -4,8 +4,8 @@ import { Check } from "lucide-react";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Oferte Personalizate pentru Creare Site',
-  description: 'Oferte personalizate pentru creare site. Fără prețuri fixe, consultanță gratuită și soluții adaptate afacerii tale. Contactează-ne pentru o ofertă!',
+  title: 'Soluții web personalizate',
+  description: 'Site-uri de prezentare, magazine online și servicii conexe fără prețuri fixe afișate public. Cerem întâi detalii, apoi venim cu oferta potrivită.',
   alternates: {
     canonical: "/preturi-site",
   },
@@ -13,141 +13,111 @@ export const metadata: Metadata = {
 
 const websitePackages = [
   {
-    title: "PACHET STANDARD",
+    title: "SITE DE PREZENTARE",
     price: "Contact pentru ofertă",
     priceSuffix: "personalizată",
-    description: "Site pentru afacerea ta, modern și eficient. Contactează-ne pentru o ofertă adaptată nevoilor tale.",
+    description: "Pentru firme, servicii, showroom-uri, clinici sau branduri care au nevoie de imagine clară și profesionistă.",
     features: [
-      "Până la 5 secțiuni / pagini",
-      "Design responsive",
-      "Tehnologie Next.js",
-      "Livrare în format ZIP",
-      "Conectare domeniu gratuită",
-      "Optimizat SEO tehnic",
-      "Găzduire și stocare gratuită",
+      "Structură clară și design premium",
+      "Copy comercial și mesaje convingătoare",
+      "Optimizare mobil și SEO tehnic",
+      "Formulare de contact și CTA-uri bine plasate",
+      "Viteză excelentă și cod curat",
     ],
-    ctaText: "Solicită Ofertă",
-    ctaLink: "/contact?pachet=standard",
+    ctaText: "Solicită ofertă",
+    ctaLink: "/contact?pachet=site-prezentare",
   },
   {
-    title: "PACHET CUSTOM",
+    title: "MAGAZIN ONLINE",
     price: "Contact pentru ofertă",
     priceSuffix: "personalizată",
-    description: "Site creat 100% după viziunea ta. Consultanță gratuită pentru a găsi cea mai bună soluție.",
+    description: "Pentru afaceri care vor să vândă online mai organizat, mai credibil și mai eficient.",
     features: [
-      "Totul de la Standard",
-      "Design 100% personalizat",
-      "Până la 8 pagini/secțiuni",
-      "Galerie foto/video interactivă",
-      "SEO tehnic avansat",
-      "Performanță 90-100 garantată",
-      "Sistem de recenzii sau testimoniale integrat",
+      "Categorii, produse și filtre organizate",
+      "Descrieri și titluri produse",
+      "Inserare produse și optimizare prezentare",
+      "Tracking, pixeli și măsurare conversii",
+      "Setup orientat pe vânzare și creștere",
     ],
-    ctaText: "Discută Proiectul",
-    ctaLink: "/contact?pachet=custom",
+    ctaText: "Discută proiectul",
+    ctaLink: "/contact?pachet=magazin-online",
     recommended: true,
   },
   {
-    title: 'PACHET AVANSAT',
+    title: 'SUPORT & GROWTH',
     price: "Contact pentru ofertă",
     priceSuffix: "personalizată",
-    description: "Pachetul complet pentru afaceri care vor mai mult. Ofertă personalizată fără compromisuri.",
+    description: "Pentru business-uri care au deja o bază și vor optimizare, promovare și suport constant.",
     features: [
-      "Totul de la Custom",
-      "Texte optimizate sau scrise de la zero",
-      "Generare de imagini pentru site",
-      "Realizare logo personalizat",
-      "Securitate web avansată inclusă",
-      "Peste 8 pagini/secțiuni incluse",
-      "Integrare Chat WhatsApp",
+      "Google Ads, Meta Ads și TikTok Ads",
+      "Audit, tracking și instalare pixeli",
+      "Creativitate pentru bannere și vizualuri",
+      "Îmbunătățiri pentru pagini și funnel-uri",
+      "Consultanță strategică pentru pașii următori",
     ],
-    ctaText: "Hai să Colaborăm",
-    ctaLink: "/contact?pachet=avansat",
+    ctaText: "Hai să colaborăm",
+    ctaLink: "/contact?pachet=growth",
   },
 ];
 
 const addons = [
-    { name: "Integrare Chat AI cu GPT sau Gemini", price: "Contact pentru ofertă" },
-    { name: "Integrare WhatsApp Business", price: "Contact pentru ofertă" },
-    { name: "SEO profesional pentru site-uri existente", price: "Contact pentru ofertă" },
-    { name: "Configurare Securitate Site", price: "Contact pentru ofertă" }
-]
+  { name: "Inserare și organizare produse în magazin" },
+  { name: "Descrieri comerciale și titluri optimizate" },
+  { name: "Instalare Google Analytics, Meta Pixel și TikTok Pixel" },
+  { name: "Consultanță pentru lansare și procese e-commerce" },
+  { name: "Editare imagini produse și materiale promo" },
+  { name: "Logo, elemente vizuale și ajustări de brand" },
+];
 
 export default function PacheteSitePage() {
   return (
     <div className="py-20 sm:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="mb-16 text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
-            Oferte Personalizate pentru <span className="text-primary">Site-ul Tău</span>
+            Soluții personalizate pentru <span className="text-primary">afacerea ta</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-            Nu avem prețuri fixe - fiecare proiect este unic. Contactează-ne pentru o consultanță gratuită și o ofertă adaptată exact nevoilor afacerii tale.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+            Nu afișăm prețuri standard pentru că fiecare proiect vine cu alt număr de pagini, produse, integrări și obiective. Întâi discutăm, apoi îți trimitem cea mai potrivită variantă.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {websitePackages.map((pkg, idx) => {
-            const isAvansat = pkg.title === "PACHET AVANSAT";
-            const isStandard = idx === 0;
-            const isCustom = pkg.title === "PACHET CUSTOM";
+            const isLast = idx === 2;
             return (
               <PricingCard
                 key={pkg.title}
                 {...pkg}
                 className={
-                  "transition-all duration-300 ease-in-out " +
-                  (isAvansat
-                    ? "shadow-[0_0_10px_#25D366] hover:shadow-[0_0_20px_#25D366] hover:bg-[#25D366]/10"
-                    : isStandard
-                      ? "shadow-[0_0_10px_rgb(239,68,68)] hover:shadow-[0_0_20px_rgb(239,68,68)] hover:bg-red-500/10"
-                      : isCustom
-                        ? "shadow-[0_0_10px_hsl(var(--primary))] hover:shadow-[0_0_20px_hsl(var(--primary))] hover:bg-primary/10"
-                        : "")
+                  "glass-card rounded-2xl transition-all duration-300 ease-in-out " +
+                  (isLast ? "hover:border-fuchsia-400/60" : "hover:border-cyan-400/60")
                 }
-                ctaClassName={isAvansat ? "bg-[#25D366] text-primary-foreground hover:bg-[#1da851]" : ""}
+                ctaClassName={isLast ? "bg-fuchsia-500 text-white hover:bg-fuchsia-400" : ""}
               />
             );
           })}
         </div>
+
         <div className="text-center my-8">
-          <a href="/portofoliu" className="inline-block text-lg font-bold text-primary hover:underline">Vezi exemple de site-uri realizate de noi în portofoliu.</a>
+          <a href="/portofoliu" className="inline-block text-lg font-bold text-primary hover:underline">Vezi câteva proiecte din portofoliu.</a>
         </div>
-        
-        <div className="mt-20">
-            <Card className="bg-secondary/50 border-border/50">
-                <CardHeader className="text-center">
-                    <CardTitle className="text-3xl font-headline text-white">Servicii Suplimentare & Integrări</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-3xl mx-auto">
-                        {addons.map(addon => (
-                            <li key={addon.name} className="flex items-center border-b border-dashed border-border pb-2">
-                                <span className="flex items-center"><Check className="w-4 h-4 mr-2 text-primary"/>{addon.name}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </CardContent>
-            </Card>
-        </div>
-        {/* Extra servicii pret negociabil */}
-        <div className="mt-8">
-            <Card className="bg-secondary/50 border-border/50">
-                <CardHeader className="text-center">
-                    <CardTitle className="text-2xl font-headline text-white">Extra servicii sau pentru site-uri existente</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <p className="text-center text-lg text-white mb-2">
-                        Oferim servicii suplimentare precum <span className="font-bold text-primary">editare</span>, <span className="font-bold text-primary">reconfigurare</span>, <span className="font-bold text-primary">integrare</span> sau <span className="font-bold text-primary">optimizare</span> pentru site-uri deja existente.
-                    </p>
-                    <p className="text-center text-base text-muted-foreground mb-2">
-                        Fiecare proiect este unic, iar prețul se stabilește în funcție de complexitate și cerințe.
-                    </p>
-                    <p className="text-center text-lg font-bold text-primary">
-                        Contactează-ne pentru o ofertă personalizată și consultanță gratuită!
-                    </p>
-                </CardContent>
-            </Card>
+
+        <div className="mt-16">
+          <Card className="glass-card rounded-2xl border-white/10">
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl font-headline text-white">Ce mai putem face pentru tine</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-w-4xl mx-auto">
+                {addons.map((addon) => (
+                  <li key={addon.name} className="flex items-start border-b border-dashed border-white/10 pb-2 text-slate-300">
+                    <span className="flex items-start"><Check className="w-4 h-4 mr-2 mt-1 text-primary" />{addon.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

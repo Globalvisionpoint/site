@@ -1,118 +1,219 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Landmark, Rocket, KeyRound } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  ArrowRight,
+  BadgeCheck,
+  ChartNoAxesCombined,
+  LayoutTemplate,
+  Megaphone,
+  ScanSearch,
+  ShoppingCart,
+  Sparkles,
+  Workflow,
+} from 'lucide-react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Creare Site Web Fără Abonament',
-  description: 'Agenție creare site-uri rapide, fără abonament. Web design profesional, preț fix și livrare completă. Vezi portofoliul!',
+  title: 'Creare site-uri și magazine online care vând',
+  description:
+    'Agenție digitală pentru site-uri de prezentare, magazine online, pixeli, tracking, descrieri produse și campanii Google, Meta sau TikTok Ads.',
 };
+
+const services = [
+  {
+    title: 'Site-uri de prezentare',
+    description: 'Pagini rapide, moderne și clare pentru branduri, servicii, clinici, restaurante sau firme locale.',
+    icon: LayoutTemplate,
+  },
+  {
+    title: 'Magazine online',
+    description: 'Structură bună, categorie curate, experiență fluidă și accent pe conversie, nu doar pe aspect.',
+    icon: ShoppingCart,
+  },
+  {
+    title: 'Produse și conținut',
+    description: 'Scriem titluri, descrieri, beneficii și organizăm produsele ca să fie ușor de găsit și cumpărat.',
+    icon: Sparkles,
+  },
+  {
+    title: 'Tracking și pixeli',
+    description: 'Instalăm corect GA4, Google Ads, Meta Pixel și TikTok Pixel pentru măsurare reală.',
+    icon: ScanSearch,
+  },
+  {
+    title: 'Campanii Ads',
+    description: 'Google, Meta și TikTok Ads cu setare, optimizare și ajustări constante pe baza rezultatelor.',
+    icon: Megaphone,
+  },
+  {
+    title: 'Consultanță e-commerce',
+    description: 'Te ghidăm cu pașii esențiali pentru lansare, organizare, procese, imagine și direcție de creștere.',
+    icon: ChartNoAxesCombined,
+  },
+];
+
+const highlights = [
+  'Păstrăm site-ul rapid și curat, fără elemente grele inutile.',
+  'Nu afișăm prețuri fixe; fiecare ofertă se face după volumul real de lucru.',
+  'Păstrăm rutele importante pentru a nu afecta indexarea existentă din Google.',
+  'Lucrăm orientat pe imagine bună, încredere și conversie.',
+];
+
+const steps = [
+  {
+    title: 'Analiză și direcție',
+    text: 'Înțelegem ce vinzi, cui te adresezi și ce vrei să obții din site sau magazin.',
+  },
+  {
+    title: 'Design și structură',
+    text: 'Refacem mesajul, aspectul, culorile și secțiunile astfel încât site-ul să arate premium.',
+  },
+  {
+    title: 'Implementare și tracking',
+    text: 'Setăm paginile, formularele, produsele, pixelii și partea tehnică importantă.',
+  },
+  {
+    title: 'Optimizare și lansare',
+    text: 'Verificăm viteza, claritatea mesajului și pregătim terenul pentru promovare.',
+  },
+];
 
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative pt-16 sm:pt-20 pb-6 sm:pb-8 flex items-center justify-center min-h-[600px] overflow-hidden">
-        <div className="container mx-auto px-4 z-10 relative flex flex-col items-center justify-center text-center gap-6">
-          <div className="text-4xl sm:text-5xl md:text-6xl font-bold font-headline mb-2 tracking-tighter text-white max-w-3xl mx-auto">
-            <span>Site pentru afacerea ta, </span>
-            <span className="text-primary">fără abonament.</span>
+      <section className="relative overflow-hidden pb-10 pt-10 sm:pb-16 sm:pt-16">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-5xl text-center">
+            <div className="mb-4 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300">
+              Agenție digitală pentru branduri și magazine online
+            </div>
+            <h1 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+              Construim site-uri și magazine online care <span className="text-cyan-300">arată premium</span> și sunt făcute să aducă rezultate.
+            </h1>
+            <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-300 md:text-xl">
+              Ne ocupăm de design, structură, produse, descrieri, pixeli, tracking și promovare pe Google, Meta sau TikTok. Tu vii cu direcția afacerii, noi transformăm totul într-o prezență online serioasă și convingătoare.
+            </p>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm">
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">site de prezentare</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">magazin online</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">copy pentru produse</span>
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Google • Meta • TikTok Ads</span>
+            </div>
+
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Button asChild size="lg" className="rounded-full bg-cyan-400 text-slate-950 hover:bg-cyan-300">
+                <Link href="/contact">
+                  Solicită consultanță
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-full border-white/15 bg-white/5 text-white hover:bg-white/10 hover:text-white">
+                <Link href="/portofoliu">Vezi portofoliu</Link>
+              </Button>
+            </div>
           </div>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-muted-foreground mb-2">
-            Plătești o singură dată, îl deții pe viață. Realizăm site-uri ultra-rapide și moderne, conectate gratuit la domeniu prin cloud — fără abonamente, fără costuri lunare. Primești și arhiva .zip, ca să îl poți publica oriunde vrei, oricând vrei.
-          </p>
-          <div className="bg-primary/10 border border-primary/20 rounded-lg px-6 py-4 max-w-2xl mx-auto">
-            <p className="text-lg font-semibold text-primary mb-1">💡 Oferte personalizate pentru fiecare client!</p>
-            <p className="text-sm text-muted-foreground">Fără prețuri fixe - contactează-ne pentru o consultanță gratuită și o ofertă adaptată afacerii tale.</p>
-          </div>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-2">
-            <Button asChild size="lg">
-              <Link href="/preturi-site">Vezi Oferte Personalizate</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/promovare-online">Servicii Marketing</Link>
-            </Button>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            <div className="glass-card rounded-2xl p-5 text-left">
+              <p className="text-sm text-slate-400">Ce urmărești</p>
+              <p className="mt-1 text-xl font-semibold text-white">Un site mai curat, mai profesionist și mai convingător</p>
+            </div>
+            <div className="glass-card rounded-2xl p-5 text-left">
+              <p className="text-sm text-slate-400">Cum lucrăm</p>
+              <p className="mt-1 text-xl font-semibold text-white">Fără prețuri standard. Fără soluții copy-paste.</p>
+            </div>
+            <div className="glass-card rounded-2xl p-5 text-left">
+              <p className="text-sm text-slate-400">Ce păstrăm</p>
+              <p className="mt-1 text-xl font-semibold text-white">Performanța ridicată și paginile deja indexate</p>
+            </div>
           </div>
         </div>
       </section>
-      {/* Spațiu gol între header și secțiunea cu gif-ul */}
-      <div className="h-8 sm:h-12"></div>
 
-      <section id="de-ce-noi" className="pt-4 sm:pt-6 pb-20 sm:pb-24">
+      <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-white">Te-ai săturat de costuri lunare și platforme complicate?</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-              Uită de abonamente, mentenanță costisitoare și site-uri lente. Noi oferim alternativa.
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold text-white md:text-4xl">Tot ce ai nevoie ca să vinzi mai bine online</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-slate-300">
+              Nu facem doar “un site frumos”. Gândim mesajul, imaginea și pașii care îl ajută pe client să te contacteze sau să cumpere.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="bg-card border-border/50 hover:border-primary transition-colors duration-300 transform hover:-translate-y-1">
-              <CardHeader className="items-center text-center">
-                <Landmark className="w-12 h-12 mb-4 text-primary" />
-                <CardTitle className="font-headline text-xl">Fără Costuri Ascunse</CardTitle>
-                <CardDescription className="text-center">Prețul afișat este singurul preț pe care îl plătești. Fără abonament lunar pentru site. Simplu și transparent.</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="bg-card border-border/50 hover:border-primary transition-colors duration-300 transform hover:-translate-y-1">
-              <CardHeader className="items-center text-center">
-                <Rocket className="w-12 h-12 mb-4 text-primary" />
-                <CardTitle className="font-headline text-xl">Performanță Garantată</CardTitle>
-                <CardDescription className="text-center">Folosim tehnologii de top (Next.js) pentru a garanta un scor de 90-100 în Google PageSpeed. Site-ul tău se va încărca instant.</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="bg-card border-border/50 hover:border-primary transition-colors duration-300 transform hover:-translate-y-1">
-              <CardHeader className="items-center text-center">
-                <KeyRound className="w-12 h-12 mb-4 text-primary" />
-                <CardTitle className="font-headline text-xl">Control Total</CardTitle>
-                <CardDescription className="text-center">Primești site-ul complet într-un fișier ZIP. E 100% al tău. Îl poți modifica, găzdui oriunde și conecta la orice domeniu dorești.</CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="bg-card border-primary/30 hover:border-primary transition-colors duration-300 transform hover:-translate-y-1">
-              <CardHeader className="items-center text-center">
-                <div className="w-12 h-12 mb-4 text-primary text-2xl">💰</div>
-                <CardTitle className="font-headline text-xl">Oferte Personalizate</CardTitle>
-                <CardDescription className="text-center">Fără prețuri fixe - fiecare ofertă este adaptată nevoilor tale. Consultanță gratuită pentru a găsi cea mai bună soluție.</CardDescription>
-              </CardHeader>
-            </Card>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {services.map((service) => {
+              const Icon = service.icon;
+              return (
+                <Card key={service.title} className="glass-card rounded-2xl border-white/10">
+                  <CardHeader>
+                    <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <CardTitle className="text-xl text-white">{service.title}</CardTitle>
+                    <CardDescription className="text-slate-300">{service.description}</CardDescription>
+                  </CardHeader>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section id="cum-functioneaza" className="py-20 sm:py-24">
+      <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-white">Procesul Nostru în 4 Pași Simpli</h2>
-            <div className="bg-primary/10 border border-primary/20 rounded-lg px-6 py-4 max-w-3xl mx-auto mt-6">
-              <p className="text-lg font-semibold text-primary mb-2">🎯 Soluții personalizate pentru fiecare afacere!</p>
-              <p className="text-muted-foreground">Fiecare proiect este unic - contactează-ne pentru o consultanță gratuită și o ofertă adaptată exact nevoilor tale.</p>
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
+            <div className="glass-card rounded-3xl p-6 sm:p-8">
+              <h2 className="text-3xl font-bold text-white">De ce varianta asta funcționează mai bine</h2>
+              <div className="mt-6 space-y-4">
+                {highlights.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <BadgeCheck className="mt-0.5 h-5 w-5 shrink-0 text-cyan-300" />
+                    <p className="text-slate-300">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="glass-card rounded-3xl p-6 sm:p-8">
+              <div className="mb-4 flex items-center gap-3">
+                <Workflow className="h-6 w-6 text-fuchsia-300" />
+                <h3 className="text-2xl font-bold text-white">Fără prețuri afișate public</h3>
+              </div>
+              <p className="text-slate-300">
+                Pentru un magazin online sau un proiect de promovare, costul depinde de numărul de produse, complexitate, integrare și volumul de lucru. De aceea pregătim oferte personalizate după o discuție scurtă.
+              </p>
+              <Button asChild className="mt-6 rounded-full bg-fuchsia-500 text-white hover:bg-fuchsia-400">
+                <Link href="/preturi-site">Vezi cum lucrăm</Link>
+              </Button>
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute top-[calc(50%+5mm)] left-0 w-full h-0.5 bg-border -translate-y-1/2 hidden md:block" aria-hidden="true"></div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-2xl mb-4 border-4 border-background">1</div>
-                <h3 className="font-headline text-xl font-bold mb-2">Alegi Oferta</h3>
-                <p className="text-muted-foreground">Selectezi oferta de site web care ți se potrivește cel mai bine.</p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-2xl mb-4 border-4 border-background">2</div>
-                <h3 className="font-headline text-xl font-bold mb-2">Ne trimiți detaliile</h3>
-                <p className="text-muted-foreground">Ne oferi textele, imaginile și viziunea ta pentru site.</p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-2xl mb-4 border-4 border-background">3</div>
-                <h3 className="font-headline text-xl font-bold mb-2">Construim și Livrăm</h3>
-                <p className="text-muted-foreground">Creăm site-ul tău modern și performant și ți-l livrăm într-o arhivă .zip.</p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-2xl mb-4 border-4 border-background">4</div>
-                <h3 className="font-headline text-xl font-bold mb-2">Îl Deții și Publici</h3>
-                <p className="text-muted-foreground">Site-ul este 100% al tău. Îl poți încărca pe orice găzduire și te ajutăm gratuit să-l conectezi la domeniu.</p>
-              </div>
-            </div>
+        </div>
+      </section>
+
+      <section id="cum-functioneaza" className="py-12 sm:py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold text-white md:text-4xl">Proces clar, fără complicații</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-slate-300">
+              Lucrăm simplu, organizat și orientat pe rezultat, astfel încât site-ul să arate bine și să fie util din prima zi.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {steps.map((step, index) => (
+              <Card key={step.title} className="glass-card rounded-2xl border-white/10">
+                <CardHeader>
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-cyan-400 text-sm font-bold text-slate-950">
+                    {index + 1}
+                  </div>
+                  <CardTitle className="text-xl text-white">{step.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-slate-300">{step.text}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

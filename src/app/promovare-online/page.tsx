@@ -4,8 +4,8 @@ import { Separator } from "@/components/ui/separator";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Promovare Online Personalizată (Google, Meta, TikTok)',
-  description: 'Servicii personalizate de promovare online. Consultanță gratuită pentru campanii Google, Facebook și TikTok. Ofertă adaptată bugetului tău!',
+  title: 'Promovare online și tracking',
+  description: 'Setăm, gestionăm și optimizăm campanii Google, Meta și TikTok Ads, plus tracking și pixeli pentru măsurare reală.',
   alternates: {
     canonical: "/promovare-online",
   },
@@ -13,50 +13,50 @@ export const metadata: Metadata = {
 
 const marketingPackages = [
   {
-    title: "PACHET START",
+    title: "SETUP & TRACKING",
     price: "Contact pentru ofertă",
     priceSuffix: "personalizată",
-    description: "Pentru afaceri la început de drum. Consultanță gratuită pentru strategia potrivită.",
+    description: "Pentru business-uri care vor o fundație bună înainte să consume buget inutil pe reclame.",
     features: [
-      "1 platformă (Google, Meta sau TikTok)",
-      "1 campanie activă",
-      "Copywriting pentru reclamă (text + titlu)",
-      "Optimizare săptămânală",
-      "Raport lunar simplu",
+      "Instalare Google Analytics 4",
+      "Meta Pixel și TikTok Pixel",
+      "Evenimente și conversii importante",
+      "Verificare tracking și atribuiri",
+      "Recomandări pentru pașii următori",
     ],
-    ctaText: "Începe Consultanța",
-    ctaLink: "/contact?pachet=promo-start",
+    ctaText: "Cerere analiză",
+    ctaLink: "/contact?pachet=tracking",
   },
   {
-    title: "PACHET BUSINESS",
+    title: "CAMPANII & OPTIMIZARE",
     price: "Contact pentru ofertă",
     priceSuffix: "personalizată",
-    description: "Pentru afaceri care vor să crească. Strategie adaptată obiectivelor tale.",
+    description: "Pentru afaceri care vor trafic mai relevant, lead-uri sau vânzări mai bune.",
     features: [
-      "2 platforme la alegere (Google, Meta sau TikTok)",
-      "Până la 3 campanii active",
-      "Copywriting pentru reclamă (text + titlu)",
-      "Optimizări & Recomandări strategice",
-      "Raport lunar detaliat",
+      "Google Ads, Meta Ads sau TikTok Ads",
+      "Structură campanii și audiențe",
+      "Texte și direcție creativă pentru reclame",
+      "Optimizări periodice și analiză rezultate",
+      "Raport clar, fără limbaj complicat",
     ],
-    ctaText: "Discută Strategia",
-    ctaLink: "/contact?pachet=promo-business",
+    ctaText: "Discută strategia",
+    ctaLink: "/contact?pachet=ads-optimizare",
     recommended: true,
   },
   {
-    title: "PACHET PRO",
+    title: "GROWTH COMPLET",
     price: "Contact pentru ofertă",
     priceSuffix: "personalizată",
-    description: "Pentru scalare și dominare pe piață. Soluție completă pentru creșterea afacerii.",
+    description: "Pentru magazine online sau business-uri care vor creștere susținută și o imagine mai puternică.",
     features: [
-      "Toate cele 3 platforme (Google, Meta, TikTok)",
-      "Până la 6 campanii active",
-      "Copywriting pentru reclamă (text + titlu)",
-      "Optimizări & Recomandări strategice avansate",
-      "Grafică pentru promovare",
+      "Promovare multi-platformă",
+      "Remarketing și audiențe inteligente",
+      "Suport pentru feed-uri și produse",
+      "Idei de ofertare și îmbunătățire conversie",
+      "Ajustări strategice pe termen lung",
     ],
-    ctaText: "Hai să Crescăm",
-    ctaLink: "/contact?pachet=promo-pro",
+    ctaText: "Hai să creștem",
+    ctaLink: "/contact?pachet=growth-ads",
   },
 ];
 
@@ -66,65 +66,56 @@ export default function PromovareOnlinePage() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
-            Adu-ți Clienți pe Site. <span className="text-primary">Promovare Personalizată.</span>
+            Trafic mai bun. <span className="text-primary">Măsurare corectă.</span> Decizii mai clare.
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-            Consultanță gratuită pentru strategia de promovare perfectă. Ne ocupăm de setare și optimizare, tu plătești bugetul de reclamă direct platformei.
+            Nu pornim reclame „la întâmplare”. Punem la punct tracking-ul, pixelii și structura campaniilor, apoi optimizăm pe date reale și obiective concrete.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {marketingPackages.map((pkg, idx) => {
-            const isPro = pkg.title === "PACHET PRO";
-            const isStart = idx === 0;
-            const isBusiness = pkg.title === "PACHET BUSINESS";
+            const isLast = idx === 2;
             return (
               <PricingCard
                 key={pkg.title}
                 {...pkg}
                 idealFor={pkg.description}
                 className={
-                  "transition-all duration-300 ease-in-out " +
-                  (isPro
-                    ? "shadow-[0_0_10px_#25D366] hover:shadow-[0_0_20px_#25D366] hover:bg-[#25D366]/10"
-                    : isStart
-                      ? "shadow-[0_0_10px_rgb(239,68,68)] hover:shadow-[0_0_20px_rgb(239,68,68)] hover:bg-red-500/10"
-                      : isBusiness
-                        ? "shadow-[0_0_10px_hsl(var(--primary))] hover:shadow-[0_0_20px_hsl(var(--primary))] hover:bg-primary/10"
-                        : "")
+                  "glass-card rounded-2xl transition-all duration-300 ease-in-out " +
+                  (isLast ? "hover:border-fuchsia-400/60" : "hover:border-cyan-400/60")
                 }
-                ctaClassName={isPro ? "bg-[#25D366] text-primary-foreground hover:bg-[#1da851]" : ""}
+                ctaClassName={isLast ? "bg-fuchsia-500 text-white hover:bg-fuchsia-400" : ""}
               />
             );
           })}
         </div>
 
-        <div className="mt-20">
-            <Card className="bg-secondary/50 border-border/50">
-                <CardHeader className="text-center">
-                    <CardTitle className="text-3xl font-body text-white">Setup Inițial (Ofertă Personalizată)</CardTitle>
-                    <CardDescription>Pentru conturile noi de reclame, oferim consultanță gratuită pentru configurarea corectă a fundației.</CardDescription>
-                </CardHeader>
-                <CardContent>
-                    <div className="max-w-md mx-auto space-y-4">
-                        <div className="flex justify-between items-center text-lg">
-                            <span>Setup cont & pixel</span>
-                            <span className="font-bold text-primary w-32 text-right">Contact pentru ofertă</span>
-                        </div>
-                        <Separator />
-                        <div className="flex justify-between items-center text-lg">
-                            <span>Instalare pixel Google / Meta/TikTok</span>
-                            <span className="font-bold text-primary w-32 text-right">Contact pentru ofertă</span>
-                        </div>
-                        <Separator />
-                        <div className="flex justify-between items-center text-lg">
-                            <span>Setup complet tracking & conturi (GA4 + Meta + Google Ads + TikTok Ads)</span>
-                            <span className="font-bold text-primary w-32 text-right">Contact pentru ofertă</span>
-                        </div>
-                        <Separator />
-                    </div>
-                </CardContent>
-            </Card>
+        <div className="mt-16">
+          <Card className="glass-card rounded-2xl border-white/10">
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl font-body text-white">Ce putem include în pachet</CardTitle>
+              <CardDescription>Configurăm exact ce are sens pentru afacerea ta, nu o listă generică pentru toată lumea.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="max-w-3xl mx-auto space-y-4 text-slate-300">
+                <div className="flex justify-between items-center text-lg gap-4">
+                  <span>Setup conturi Google Ads, Meta Ads și TikTok Ads</span>
+                  <span className="font-bold text-primary text-right">ofertă personalizată</span>
+                </div>
+                <Separator />
+                <div className="flex justify-between items-center text-lg gap-4">
+                  <span>Instalare pixeli, evenimente și conversii</span>
+                  <span className="font-bold text-primary text-right">ofertă personalizată</span>
+                </div>
+                <Separator />
+                <div className="flex justify-between items-center text-lg gap-4">
+                  <span>Optimizare campanii, bannere, texte și direcție creativă</span>
+                  <span className="font-bold text-primary text-right">ofertă personalizată</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

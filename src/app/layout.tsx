@@ -12,14 +12,26 @@ import { GoogleTagManager } from '@/components/GoogleTagManager';
 export const metadata: Metadata = {
   metadataBase: new URL('https://digital-online.ro'),
   title: {
-    default: 'Creare Site Pentru Afacerea Ta Fără Abonament | Digital-Online.ro',
+    default: 'Site-uri, magazine online și promovare | Digital-Online.ro',
     template: '%s | Digital-Online.ro',
   },
-  description: 'Oferim servicii de creare site-uri pentru afacerea ta, profesionale, ultra-rapide și moderne, cu plată unică. Fără costuri lunare, deții controlul total. Contactează-ne acum!',
-  keywords: ['creare site', 'site pentru afacerea ta', 'fara abonament', 'plata unica', 'site rapid', 'next.js', 'marketing online', 'promovare google ads', 'promovare meta ads'],
+  description:
+    'Creăm site-uri de prezentare, magazine online, descrieri produse, tracking și campanii Google, Meta sau TikTok Ads pentru afaceri care vor să crească.',
+  keywords: [
+    'creare site',
+    'magazin online',
+    'promovare online',
+    'google ads',
+    'meta ads',
+    'tiktok ads',
+    'instalare pixel',
+    'descrieri produse',
+    'consultanta ecommerce',
+  ],
   openGraph: {
-    title: 'Creare Site Pentru Afacerea Ta Fără Abonament | Digital-Online.ro',
-    description: 'Oferim servicii de creare site-uri pentru afacerea ta, profesionale, ultra-rapide și moderne, cu plată unică.',
+    title: 'Site-uri, magazine online și promovare | Digital-Online.ro',
+    description:
+      'Agenție digitală pentru site-uri rapide, magazine online, tracking și campanii de promovare orientate pe rezultate.',
     url: 'https://digital-online.ro',
     siteName: 'Digital-Online.ro',
     locale: 'ro_RO',
@@ -29,14 +41,15 @@ export const metadata: Metadata = {
         url: 'https://digital-online.ro/matrix-blue.webp',
         width: 1200,
         height: 630,
-        alt: 'Digital-Online.ro'
-      }
+        alt: 'Digital-Online.ro',
+      },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Creare Site Pentru Afacerea Ta Fără Abonament | Digital-Online.ro',
-    description: 'Oferim servicii de creare site-uri pentru afacerea ta, profesionale, ultra-rapide și moderne, cu plată unică.',
+    title: 'Site-uri, magazine online și promovare | Digital-Online.ro',
+    description:
+      'Creăm site-uri de prezentare, magazine online, tracking și campanii Google, Meta sau TikTok Ads.',
     images: ['https://digital-online.ro/matrix-blue.webp'],
   },
 };

@@ -100,7 +100,7 @@ export default function PacheteSitePage() {
         </div>
 
         <div className="text-center my-8">
-          <a href="/portofoliu" className="inline-block text-lg font-bold text-primary hover:underline">Vezi câteva proiecte din portofoliu.</a>
+          <a href="/portofoliu" className="inline-block text-lg font-bold text-primary hover:underline">Descoperă soluțiile pe care le putem construi pentru afacerea ta.</a>
         </div>
 
         <div className="mt-16">

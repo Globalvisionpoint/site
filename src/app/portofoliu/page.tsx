@@ -65,7 +65,7 @@ export default function PortofoliuPage() {
       <div className="container mx-auto px-4">
         <div className="mb-8 pt-0 text-center">
           <div className="mb-4 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300">
-            direcții de proiect pentru brandul tău
+            Direcții de proiect pentru brandul tău
           </div>
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
             Ce putem construi pentru <span className="text-primary">afacerea ta</span>

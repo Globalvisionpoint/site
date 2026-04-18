@@ -102,7 +102,7 @@ const heroBlocks = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative overflow-hidden pb-10 pt-10 sm:pb-16 sm:pt-16">
+      <section className="relative overflow-hidden pb-10 pt-4 sm:pb-16 sm:pt-10">
         <div className="container mx-auto px-4">
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
             <div>

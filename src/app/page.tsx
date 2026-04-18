@@ -89,10 +89,10 @@ export default function Home() {
               Agenție digitală pentru branduri și magazine online
             </div>
             <h1 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Construim site-uri și magazine online care <span className="text-cyan-300">arată premium</span> și sunt făcute să aducă rezultate.
+              Site-uri și magazine online care <span className="text-cyan-300">arată premium</span> și vând mai bine
             </h1>
             <p className="mx-auto mt-5 max-w-3xl text-lg text-slate-300 md:text-xl">
-              Ne ocupăm de design, structură, produse, descrieri, pixeli, tracking și promovare Google ads, Meta ads sau TikTok ads. Tu vii cu direcția afacerii, noi transformăm totul într-o prezență online serioasă și convingătoare.
+              Ne ocupăm de design, structură, produse, descrieri, pixeli, tracking și promovare Google Ads, Meta Ads sau TikTok Ads, astfel încât afacerea ta să inspire încredere și să crească mai ușor online.
             </p>
 
             <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm">

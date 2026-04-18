@@ -133,7 +133,7 @@ export default function RootLayout({
       >
         <MatrixBackground className="opacity-40" />
         <Header />
-        <div className="h-2 sm:h-3"></div>
+        <div className="h-0.5 sm:h-2"></div>
         <main className="flex-grow">{children}</main>
         <Footer />
         <Toaster />

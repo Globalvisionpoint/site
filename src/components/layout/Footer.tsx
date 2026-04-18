@@ -2,14 +2,9 @@
 
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
-import { useEffect, useState } from 'react';
 
 export function Footer() {
-  const [year, setYear] = useState(new Date().getFullYear());
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const year = 2025;
 
   return (
     <footer className="mt-12 border-t border-white/10 bg-slate-950/80">

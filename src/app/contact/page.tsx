@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-20 sm:py-24">
+    <div className="pt-4 pb-12 sm:pt-8 sm:pb-20">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="relative text-center mb-16">
+          <div className="relative text-center mb-10">
             <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
               Spune-ne ce vrei să <span className="text-primary">construim</span>
             </h1>

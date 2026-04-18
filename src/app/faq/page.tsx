@@ -82,9 +82,9 @@ export default function FaqPage() {
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
       </Head>
-      <div className="py-20 sm:py-24">
+      <div className="pt-4 pb-12 sm:pt-8 sm:pb-20">
         <div className="container mx-auto px-4">
-          <div className="relative text-center mb-16">
+          <div className="relative text-center mb-10">
             <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
               Întrebări frecvente, <span className="text-primary">răspunsuri directe</span>
             </h1>

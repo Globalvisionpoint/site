@@ -73,9 +73,9 @@ const platformTags = ["Shopify", "Google Ads", "Meta Ads", "TikTok Ads"];
 
 export default function PacheteSitePage() {
   return (
-    <div className="py-10 sm:py-20">
+    <div className="pt-3 pb-10 sm:pt-8 sm:pb-20">
       <div className="container mx-auto px-4">
-        <div className="glass-card mb-12 rounded-[28px] p-6 sm:p-8">
+        <div className="glass-card mb-10 rounded-[28px] p-6 sm:p-8">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr]">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">

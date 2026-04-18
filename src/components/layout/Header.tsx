@@ -11,10 +11,10 @@ import React from 'react';
 
 const navLinks = [
   { href: '/', label: 'Acasă', icon: Home },
-  { href: '/preturi-site', label: 'Servicii web', icon: Tag },
-  { href: '/promovare-online', label: 'Ads & tracking', icon: Rocket },
+  { href: '/preturi-site', label: 'Servicii', icon: Tag },
+  { href: '/promovare-online', label: 'Promovare', icon: Rocket },
   { href: '/portofoliu', label: 'Soluții', icon: Briefcase },
-  { href: '/faq', label: 'FAQ', icon: HelpCircle },
+  { href: '/faq', label: 'Întrebări', icon: HelpCircle },
 ];
 
 export function Header() {

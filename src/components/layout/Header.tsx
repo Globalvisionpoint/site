@@ -23,12 +23,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full" suppressHydrationWarning={true}>
-      <div className="border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+      <div className="border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-3">
             <Logo />
-            <span className="hidden lg:inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-medium text-cyan-300">
-              web, e-commerce, ads
+            <span className="hidden lg:inline-flex rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              site-uri • e-commerce • ads
             </span>
           </div>
 
@@ -39,8 +39,8 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    'transition-colors hover:text-white',
-                    pathname === link.href ? 'text-cyan-300' : 'text-slate-300'
+                    'transition-colors hover:text-primary',
+                    pathname === link.href ? 'text-primary' : 'text-slate-300'
                   )}
                   aria-current={pathname === link.href ? 'page' : undefined}
                 >
@@ -50,8 +50,8 @@ export function Header() {
               <Link
                 href="/contact"
                 className={cn(
-                  'transition-colors hover:text-white',
-                  pathname === '/contact' ? 'text-cyan-300' : 'text-slate-300'
+                  'transition-colors hover:text-primary',
+                  pathname === '/contact' ? 'text-primary' : 'text-slate-300'
                 )}
                 aria-current={pathname === '/contact' ? 'page' : undefined}
               >
@@ -59,7 +59,7 @@ export function Header() {
               </Link>
             </nav>
 
-            <Button asChild className="rounded-full bg-cyan-400 text-slate-950 hover:bg-cyan-300">
+            <Button asChild className="rounded-full bg-primary text-primary-foreground hover:opacity-90">
               <Link href="/contact">Solicită ofertă</Link>
             </Button>
           </div>
@@ -73,7 +73,7 @@ export function Header() {
             </Button>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button size="icon" className="rounded-full bg-cyan-400 text-slate-950 hover:bg-cyan-300">
+                <Button size="icon" className="rounded-full bg-primary text-primary-foreground hover:opacity-90">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Deschide meniul</span>
                 </Button>
@@ -99,7 +99,7 @@ export function Header() {
                           className={cn(
                             'flex items-center gap-3 rounded-xl px-4 py-3 transition-colors',
                             pathname === link.href
-                              ? 'bg-cyan-400/10 text-cyan-300'
+                              ? 'bg-primary/10 text-primary'
                               : 'text-slate-200 hover:bg-white/5'
                           )}
                         >

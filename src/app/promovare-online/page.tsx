@@ -60,17 +60,40 @@ const marketingPackages = [
   },
 ];
 
+const platforms = ["Google Ads", "Meta Ads", "TikTok Ads", "Shopify"];
+
 export default function PromovareOnlinePage() {
   return (
     <div className="py-20 sm:py-24">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
-            Trafic mai bun. <span className="text-primary">Măsurare corectă.</span> Decizii mai clare.
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-            Nu pornim reclame „la întâmplare”. Punem la punct tracking-ul, pixelii și structura campaniilor, apoi optimizăm pe date reale și obiective concrete.
-          </p>
+        <div className="glass-card mb-12 rounded-[28px] p-6 sm:p-8">
+          <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr]">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
+                Trafic mai bun. <span className="text-primary">Măsurare corectă.</span> Decizii mai clare.
+              </h1>
+              <p className="text-lg text-slate-300 max-w-3xl mt-4">
+                Nu pornim reclame la întâmplare. Punem la punct tracking-ul, pixelii și structura campaniilor, apoi optimizăm pe date reale și obiective concrete.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {platforms.map((item) => (
+                  <span key={item} className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm text-slate-100">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4 sm:p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">în ce ne concentrăm</p>
+              <ul className="mt-4 space-y-3 text-slate-300">
+                <li>• instalare corectă a pixelilor și conversiilor</li>
+                <li>• setare campanii cu structură clară</li>
+                <li>• analiză și optimizare pe baza datelor</li>
+                <li>• direcție creativă pentru reclame și bannere</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -81,11 +104,8 @@ export default function PromovareOnlinePage() {
                 key={pkg.title}
                 {...pkg}
                 idealFor={pkg.description}
-                className={
-                  "glass-card rounded-2xl transition-all duration-300 ease-in-out " +
-                  (isLast ? "hover:border-fuchsia-400/60" : "hover:border-cyan-400/60")
-                }
-                ctaClassName={isLast ? "bg-fuchsia-500 text-white hover:bg-fuchsia-400" : ""}
+                className={"transition-all duration-300 ease-in-out " + (isLast ? "hover:border-accent/50" : "hover:border-primary/40")}
+                ctaClassName={isLast ? "bg-accent text-accent-foreground hover:opacity-90" : ""}
               />
             );
           })}

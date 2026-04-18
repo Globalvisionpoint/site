@@ -13,17 +13,17 @@ export function Footer() {
           <div>
             <Logo />
             <p className="mt-3 max-w-xl text-sm text-slate-400">
-              Construim site-uri de prezentare, magazine online și sisteme de promovare care arată profesionist și sunt gata de creștere.
+              Construim site-uri de prezentare, magazine online și sisteme de promovare cu aspect premium, claritate și direcție de creștere.
             </p>
           </div>
 
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-300">
-            <Link href="/preturi-site" className="hover:text-cyan-300 transition-colors">Servicii web</Link>
-            <Link href="/promovare-online" className="hover:text-cyan-300 transition-colors">Promovare online</Link>
-            <Link href="/contact" className="hover:text-cyan-300 transition-colors">Contact</Link>
-            <Link href="/termeni-si-conditii" className="hover:text-cyan-300 transition-colors">Termeni și Condiții</Link>
-            <Link href="/politica-de-confidentialitate" className="hover:text-cyan-300 transition-colors">Politica de Confidențialitate</Link>
-            <Link href="/politica-cookie" className="hover:text-cyan-300 transition-colors">Politica Cookie</Link>
+            <Link href="/preturi-site" className="hover:text-primary transition-colors">Servicii</Link>
+            <Link href="/promovare-online" className="hover:text-primary transition-colors">Promovare</Link>
+            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
+            <Link href="/termeni-si-conditii" className="hover:text-primary transition-colors">Termeni și Condiții</Link>
+            <Link href="/politica-de-confidentialitate" className="hover:text-primary transition-colors">Politica de Confidențialitate</Link>
+            <Link href="/politica-cookie" className="hover:text-primary transition-colors">Politica Cookie</Link>
           </nav>
         </div>
 

@@ -13,7 +13,7 @@ const navLinks = [
   { href: '/', label: 'Acasă', icon: Home },
   { href: '/preturi-site', label: 'Servicii web', icon: Tag },
   { href: '/promovare-online', label: 'Ads & tracking', icon: Rocket },
-  { href: '/portofoliu', label: 'Portofoliu', icon: Briefcase },
+  { href: '/portofoliu', label: 'Soluții', icon: Briefcase },
   { href: '/faq', label: 'FAQ', icon: HelpCircle },
 ];
 

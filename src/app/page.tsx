@@ -107,7 +107,7 @@ export default function Home() {
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
             <div>
               <div className="mb-4 inline-flex rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-                agenție digitală pentru branduri și magazine online
+                Agenție digitală pentru branduri și magazine online
               </div>
               <h1 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
                 Site-uri și magazine online care <span className="text-primary">arată premium</span> și vând mai bine

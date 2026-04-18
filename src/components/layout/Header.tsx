@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full" suppressHydrationWarning={true}>
-      <div className="border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+      <div className="border-b border-white/10 bg-[linear-gradient(to_bottom,rgba(31,41,55,0.95),rgba(8,17,26,0.92)_55%,rgba(8,17,26,0.88))] backdrop-blur-xl">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-3">
             <Logo />

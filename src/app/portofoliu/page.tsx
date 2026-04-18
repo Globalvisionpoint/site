@@ -61,9 +61,9 @@ export const metadata: Metadata = {
 
 export default function PortofoliuPage() {
   return (
-    <div className="relative py-10 sm:py-20">
+    <div className="relative pt-2 pb-10 sm:pt-6 sm:pb-20">
       <div className="container mx-auto px-4">
-        <div className="mb-12 pt-2 text-center">
+        <div className="mb-8 pt-0 text-center">
           <div className="mb-4 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300">
             direcții de proiect pentru brandul tău
           </div>

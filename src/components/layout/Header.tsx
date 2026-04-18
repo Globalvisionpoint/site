@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full" suppressHydrationWarning={true}>
-      <div className="border-b border-primary/20 bg-[linear-gradient(180deg,#d7a93a_0%,#d7a93a_20%,rgba(189,148,53,0.96)_38%,rgba(78,64,35,0.92)_62%,rgba(8,17,26,0.98)_100%)] shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+      <div className="border-b border-primary/15 bg-[linear-gradient(180deg,#c79a2f_0%,#c79a2f_12%,rgba(171,133,45,0.92)_28%,rgba(64,53,31,0.88)_50%,rgba(8,17,26,0.98)_100%)] shadow-[0_10px_30px_rgba(0,0,0,0.20)]">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-3">
             <Logo />

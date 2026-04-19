@@ -5,7 +5,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CookieConsent } from '@/components/CookieConsent';
-import { inter, spaceGrotesk } from '@/lib/fonts';
+import { inter } from '@/lib/fonts';
 import MatrixBackground from '@/components/MatrixBackground';
 import { GoogleTagManager } from '@/components/GoogleTagManager';
 
@@ -128,7 +128,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased flex flex-col min-h-screen relative`}
+        className={`${inter.variable} font-body antialiased flex flex-col min-h-screen relative`}
         suppressHydrationWarning={true}
       >
         <MatrixBackground className="opacity-40" />

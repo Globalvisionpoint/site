@@ -19,7 +19,7 @@ const websitePackages = [
     description: "Pentru firme, servicii, showroom-uri, clinici sau branduri care au nevoie de imagine clară și profesionistă.",
     features: [
       "Structură clară și design premium",
-      "Copy comercial și mesaje convingătoare",
+      "Texte comerciale și mesaje convingătoare",
       "Optimizare mobil și SEO tehnic",
       "Formulare de contact și CTA-uri bine plasate",
       "Viteză excelentă și cod curat",
@@ -69,7 +69,7 @@ const addons = [
   { name: "Logo, elemente vizuale și ajustări de brand" },
 ];
 
-const platformTags = ["Shopify", "Google Ads", "Meta Ads", "TikTok Ads"];
+const platformTags = ["Shopify", "Node.js", "React / Next.js", "HTML / CSS", "codare custom"];
 
 export default function PacheteSitePage() {
   return (
@@ -82,7 +82,7 @@ export default function PacheteSitePage() {
                 Soluții personalizate pentru <span className="text-primary">afacerea ta</span>
               </h1>
               <p className="text-lg text-slate-300 max-w-3xl mt-4">
-                Fie că ai nevoie de un site de prezentare elegant sau de un magazin online bine organizat, construim varianta potrivită fără compromis la viteză, claritate și imagine.
+                Fie că ai nevoie de un site de prezentare elegant sau de un magazin online bine organizat, construim varianta potrivită fără compromis la viteză, claritate și imagine, inclusiv pe Shopify sau prin dezvoltare custom în Node.js, React și HTML/CSS.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {platformTags.map((tag) => (
@@ -98,7 +98,7 @@ export default function PacheteSitePage() {
               <ul className="mt-4 space-y-3 text-slate-300">
                 <li>• design nou, elegant și coerent</li>
                 <li>• structură clară pentru servicii sau produse</li>
-                <li>• copy comercial și mesaje mai convingătoare</li>
+                <li>• texte comerciale și mesaje mai convingătoare</li>
                 <li>• tracking, pixeli și pregătire pentru promovare</li>
               </ul>
             </div>

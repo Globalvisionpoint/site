@@ -60,7 +60,7 @@ const marketingPackages = [
   },
 ];
 
-const platforms = ["Google Ads", "Meta Ads", "TikTok Ads", "Shopify"];
+const platforms = ["Google Ads", "Meta Ads", "TikTok Ads", "Shopify", "Node.js", "site custom"];
 
 export default function PromovareOnlinePage() {
   return (
@@ -73,7 +73,7 @@ export default function PromovareOnlinePage() {
                 Trafic mai bun. <span className="text-primary">Măsurare corectă.</span> Decizii mai clare.
               </h1>
               <p className="text-lg text-slate-300 max-w-3xl mt-4">
-                Nu pornim reclame la întâmplare. Punem la punct tracking-ul, pixelii și structura campaniilor, apoi optimizăm pe date reale și obiective concrete.
+                Nu pornim reclame la întâmplare. Punem la punct tracking-ul, pixelii și structura campaniilor pentru magazine Shopify sau site-uri custom în Node.js și HTML/CSS, apoi optimizăm pe date reale și obiective concrete.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {platforms.map((item) => (

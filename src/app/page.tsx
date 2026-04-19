@@ -79,7 +79,7 @@ const steps = [
   },
 ];
 
-const platformBadges = ['Google Ads', 'Meta Ads', 'TikTok Ads', 'Shopify'];
+const platformBadges = ['Shopify', 'Node.js', 'React / Next.js', 'HTML / CSS', 'codare custom'];
 
 const heroBlocks = [
   {
@@ -113,13 +113,14 @@ export default function Home() {
                 Site-uri și magazine online care <span className="text-primary">arată premium</span> și vând mai bine
               </h1>
               <p className="mt-5 max-w-3xl text-lg text-slate-300 md:text-xl">
-                Ne ocupăm de design, structură, produse, descrieri, pixeli, tracking și promovare Google Ads, Meta Ads sau TikTok Ads, astfel încât afacerea ta să inspire încredere și să crească mai ușor online.
+                Ne ocupăm de design, structură, produse, descrieri, pixeli, tracking și promovare Google Ads, Meta Ads sau TikTok Ads, iar dacă este nevoie lucrăm și pe Shopify, Node.js, React, HTML/CSS sau dezvoltare custom de la zero.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2 text-sm">
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">site de prezentare</span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">magazin online</span>
-                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">copy pentru produse</span>
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">titluri și descrieri produse</span>
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Shopify • Node.js • HTML/CSS</span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Google Ads • Meta Ads • TikTok Ads</span>
               </div>
 
@@ -154,7 +155,7 @@ export default function Home() {
             <div className="glass-card rounded-[28px] p-5 sm:p-6">
               <div className="flex items-center gap-3">
                 <Workflow className="h-5 w-5 text-amber-100" />
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-100">platforme și direcții</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-100">platforme, tehnologii și direcții</p>
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2">

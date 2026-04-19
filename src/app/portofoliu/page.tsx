@@ -64,7 +64,7 @@ export default function PortofoliuPage() {
     <div className="relative pt-2 pb-10 sm:pt-6 sm:pb-20">
       <div className="container mx-auto px-4">
         <div className="mb-8 pt-0 text-center">
-          <div className="mb-4 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-300">
+          <div className="mb-4 inline-flex rounded-full border border-cyan-300/40 bg-cyan-400/15 px-4 py-2 text-sm font-medium text-cyan-100">
             Direcții de proiect pentru brandul tău
           </div>
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">
@@ -81,7 +81,7 @@ export default function PortofoliuPage() {
             return (
               <Card key={item.title} className="glass-card rounded-2xl border-white/10 flex flex-col">
                 <CardHeader>
-                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-400/15 text-cyan-100">
                     <Icon className="h-5 w-5" />
                   </div>
                   <CardTitle className="text-xl text-white">{item.title}</CardTitle>

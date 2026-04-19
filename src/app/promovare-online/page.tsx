@@ -85,7 +85,7 @@ export default function PromovareOnlinePage() {
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4 sm:p-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">în ce ne concentrăm</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-100">în ce ne concentrăm</p>
               <ul className="mt-4 space-y-3 text-slate-300">
                 <li>• instalare corectă a pixelilor și conversiilor</li>
                 <li>• setare campanii cu structură clară</li>
@@ -121,17 +121,17 @@ export default function PromovareOnlinePage() {
               <div className="max-w-3xl mx-auto space-y-4 text-slate-300">
                 <div className="flex justify-between items-center text-lg gap-4">
                   <span>Setup conturi Google Ads, Meta Ads și TikTok Ads</span>
-                  <span className="font-bold text-primary text-right">ofertă personalizată</span>
+                  <span className="font-bold text-amber-100 text-right">ofertă personalizată</span>
                 </div>
                 <Separator />
                 <div className="flex justify-between items-center text-lg gap-4">
                   <span>Instalare pixeli, evenimente și conversii</span>
-                  <span className="font-bold text-primary text-right">ofertă personalizată</span>
+                  <span className="font-bold text-amber-100 text-right">ofertă personalizată</span>
                 </div>
                 <Separator />
                 <div className="flex justify-between items-center text-lg gap-4">
                   <span>Optimizare campanii, bannere, texte și direcție creativă</span>
-                  <span className="font-bold text-primary text-right">ofertă personalizată</span>
+                  <span className="font-bold text-amber-100 text-right">ofertă personalizată</span>
                 </div>
               </div>
             </CardContent>

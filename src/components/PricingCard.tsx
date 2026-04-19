@@ -43,7 +43,7 @@ export function PricingCard({
       <CardHeader className="text-center">
         <div className="mb-4 flex justify-center">
           {recommended ? (
-            <Badge className="rounded-full bg-primary/15 text-primary hover:bg-primary/15">Recomandat</Badge>
+            <Badge className="rounded-full bg-primary text-slate-950 hover:bg-primary">Recomandat</Badge>
           ) : (
             <Badge variant="secondary" className="rounded-full bg-white/5 text-slate-300 hover:bg-white/5">Ofertă personalizată</Badge>
           )}
@@ -52,8 +52,8 @@ export function PricingCard({
         {!idealFor && <CardDescription className="text-slate-300">{description}</CardDescription>}
       </CardHeader>
       <CardContent className="flex-grow">
-        <div className="mb-6 rounded-2xl border border-primary/15 bg-primary/10 px-4 py-4 text-center">
-          <span className="text-2xl font-bold text-primary">Contact pentru ofertă personalizată</span>
+        <div className="mb-6 rounded-2xl border border-primary/20 bg-primary/15 px-4 py-4 text-center">
+          <span className="text-2xl font-bold text-amber-50">Contact pentru ofertă personalizată</span>
           <span className="mt-1 block text-sm text-slate-300">Stabilim varianta potrivită după cerințe și volum</span>
         </div>
         {idealFor && (

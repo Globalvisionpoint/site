@@ -94,7 +94,7 @@ export default function PacheteSitePage() {
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-slate-950/35 p-4 sm:p-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">ce putem include</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-100">ce putem include</p>
               <ul className="mt-4 space-y-3 text-slate-300">
                 <li>• design nou, elegant și coerent</li>
                 <li>• structură clară pentru servicii sau produse</li>
@@ -120,7 +120,7 @@ export default function PacheteSitePage() {
         </div>
 
         <div className="text-center my-8">
-          <a href="/portofoliu" className="inline-block text-lg font-bold text-primary hover:underline">Descoperă soluțiile pe care le putem construi pentru afacerea ta.</a>
+          <a href="/portofoliu" className="inline-block text-lg font-bold text-amber-100 hover:text-white hover:underline">Descoperă soluțiile pe care le putem construi pentru afacerea ta.</a>
         </div>
 
         <div className="mt-16">
